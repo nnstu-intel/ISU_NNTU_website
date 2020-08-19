@@ -1,0 +1,70 @@
+
+<p>   </p>
+<br><br>
+<div class="container">
+  <div class="headline" *ngIf="classComponent == 'Education'">
+    <h1>ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ</h1>
+    <h2><a href="" style="text-decoration: none; color: #2135C0;"></a></h2>
+  </div>
+
+  <div class="headline" *ngIf="classComponent == 'Innovation'">
+    <h1>МАЛОЕ ИНОВАЦИОННОЕ ПРЕДПРИЯТИЕ "БЕЗОПАСНОСТЬ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ" (БИТ)</h1>
+    <br>
+    <h2><a href="" style="text-decoration: none; color: #2135C0;"></a></h2>
+  </div><br>
+
+  <div class="slider middle">
+
+    <div class="slides">
+      <input type="radio" name="re" id="re1" checked *ngIf="classComponent == 'Education'">
+      <input type="radio" name="re" id="re2" *ngIf="classComponent == 'Education'">
+      <input type="radio" name="re" id="re3" *ngIf="classComponent == 'Education'">
+      <input type="radio" name="ri" id="ri1" checked *ngIf="classComponent == 'Innovation'">
+      <input type="radio" name="ri" id="ri2" *ngIf="classComponent == 'Innovation'">
+      <input type="radio" name="ri" id="ri3" *ngIf="classComponent == 'Innovation'">
+
+      <div class="slide" [ngClass]="{
+        'srr1': classComponent == 'Education',
+        'srr2': classComponent == 'Innovation'
+      }">
+        <div *ngFor="let data_slider of data; let i=index">
+          <div class="card-edd" *ngIf="classComponent == 'Education'">
+            <div *ngIf="i % 2 == 0">
+              <p>{{data_slider.title}}</p>
+              <div class="image" [ngStyle]="{'background-image': 'url(' + data_slider.img + ')'}"></div>
+            </div>
+            <div *ngIf="i % 2 == 1">
+              <div class="image" [ngStyle]="{'background-image': 'url(' + data_slider.img + ')'}"></div>
+              <p>{{data_slider.title}}</p>
+            </div>
+          </div>
+
+          <div class="card-inv" *ngIf="classComponent == 'Innovation'">
+            <div *ngIf="i % 2 == 1">
+              <p>{{data_slider.title}}</p>
+              <div class="image" [ngStyle]="{'background-image': 'url(' + data_slider.img + ')'}"></div>
+            </div>
+            <div *ngIf="i % 2 == 0">
+              <div class="image" [ngStyle]="{'background-image': 'url(' + data_slider.img + ')'}"></div>
+              <p>{{data_slider.title}}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="navigation" *ngIf="classComponent == 'Education'">
+    <label for="re1" class="bar"></label>
+    <label for="re2" class="bar"></label>
+    <label for="re3" class="bar"></label>
+  </div>
+  <div class="navigation" *ngIf="classComponent == 'Innovation'">
+    <label for="ri1" class="bar"></label>
+    <label for="ri2" class="bar"></label>
+    <label for="ri3" class="bar"></label>
+  </div>
+
+</div>

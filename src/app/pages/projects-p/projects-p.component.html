@@ -1,0 +1,43 @@
+<body class="home page-template-default page page-id-8 et_pb_button_helper_class et_fixed_nav et_show_nav et_cover_background et_pb_gutter windows et_pb_gutters3 et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_pb_footer_columns4 et_header_style_left et_pb_pagebuilder_layout et_right_sidebar et_divi_theme et-db">
+<div id="page-container">
+  <div class="et_pb_section et_pb_section_2 et_section_regular" *ngFor="let item of items, let i = index">
+
+
+    <div class="et_pb_row et_pb_row_5">
+      <div *ngIf="i % 2 == 0" class="et_pb_column et_pb_column_1_2 et_pb_column_11  et_pb_css_mix_blend_mode_passthrough">
+        <div class="et_pb_module et_pb_image et_pb_image_4">
+          <span class="et_pb_image_wrap "><img src="{{item.img}}" alt="" /></span>
+        </div>
+      </div> <!-- .et_pb_column -->
+      <div class="et_pb_column et_pb_column_1_2 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough">
+        <div class="et_pb_module et_pb_text et_pb_text_11 et_pb_bg_layout_light  et_pb_text_align_left">
+          <div class="et_pb_text_inner">
+            <h2>{{item.name}}</h2>
+          </div>
+        </div> <!-- .et_pb_text -->
+        <div class="et_pb_module et_pb_text et_pb_text_12 et_pb_bg_layout_light  et_pb_text_align_left">
+          <div class="et_pb_text_inner">
+            <h2>{{item.name1}}</h2>
+          </div>
+        </div> <!-- .et_pb_text -->
+        <div class="et_pb_module et_pb_text et_pb_text_13 et_pb_bg_layout_light  et_pb_text_align_left">
+          <div class="et_pb_text_inner">
+            <h2></h2>
+            <p>{{item.text}}</p>
+          </div>
+        </div>
+        <div class="et_pb_button_module_wrapper et_pb_button_4_wrapper et_pb_button_alignment_left et_pb_module ">
+          <a class="et_pb_button et_pb_button_4 et_hover_enabled et_pb_bg_layout_light" href="">Больше</a>
+        </div>
+      </div> <!-- .et_pb_column -->
+      <div *ngIf="i % 2 == 1"class="et_pb_column et_pb_column_1_2 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough">
+        <div class="et_pb_module et_pb_image et_pb_image_4">
+          <span class="et_pb_image_wrap "><img src="{{item.img}}" alt="" /></span>
+        </div>
+      </div> <!-- .et_pb_column -->
+    </div> <!-- .et_pb_row -->
+
+  </div>
+</div>
+</body>
+
